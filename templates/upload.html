@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Python Flask File Upload Example</title>
+</head>
+<body>
+<p>
+	{% with messages = files %}
+		<ul class=flashes>
+		{% for message in messages %}
+			<li><a href="{{ message }}">{{ message }}</a></li>
+		{% endfor %}
+		</ul>
+	{% endwith %}
+</p>
+
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input name="text">
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+
+</form>
+</body>
+</html>
